@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<title>Happy Birthday ❤️</title>
+
+<style>
+body {
+    margin: 0;
+.row {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	}
+.row img {
+	width: 100px;
+	height: auto;
+	}
+    font-family: 'Poppins', sans-serif;
+    background: url("bg.jpg");
+	background-size: cover;
+	backgroun-position: center;
+    color: white;
+    text-align: center;
+}
+h1 {
+	font-family: 'Great Vibes', cursive;
+	font-size: 45px;
+	text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+	
+	opacity: 0;
+	animation: fadeIn 2s ease forwards;
+}
+p {
+	opacity: 0;
+	animation: fadeIn 3s ease forwards;
+}
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+		}
+	}
+
+.slide {
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+	
+	opacity: 0;
+	transition: all 0.8s ease-in-out;
+}
+
+.active {
+    display: flex;
+	opacity: 1;
+}
+
+img {
+    max-width: 80%;
+    border-radius: 20px;
+    margin: 10px;
+	
+	transition: transform 0.5s ease;
+}
+img:hover {
+	transform: scale(1.05);
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background: pink;
+    color: black;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.flame {
+    width: 12px;
+    height: 22px;
+    background: radial-gradient(circle, #fff 0%, #ffcc00 40%, #ff6600 70%, transparent 100%);
+    border-radius: 50%;
+    position: absolute;
+    top: -22px;
+    left: 4px;
+    filter: blur(1px);
+    animation: flicker 0.15s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        transform: scale(1) rotate(-2deg);
+        opacity: 0.9;
+    }
+    25% {
+        transform: scale(1.1) rotate(2deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.95) rotate(-1deg);
+        opacity: 0.85;
+    }
+    75% {
+        transform: scale(1.05) rotate(1deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 0.9;
+    }
+}
+
+.flame::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    background: radial-gradient(circle, rgba(255,200,0,0.4), transparent 70%);
+    top: -5px;
+    left: -4px;
+    filter: blur(4px);
+}
+
+.candle-container {
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.candle {
+    position: relative;
+    width: 20px;
+    height: 60px;
+}
+
+.body {
+    width: 20px;
+    height: 60px;
+    background: pink;
+    border-radius: 5px;
+}
+
+.flame {
+    position: absolute;
+    top: -22px;
+    left: 4px;
+}
+
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.stars span {
+    position: absolute;
+    display: block;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: blink 2s infinite alternate;
+}
+
+@keyframes blink {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+.shooting-star {
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: 3px;
+    height: 80px;
+    background: linear-gradient(white, transparent);
+    opacity: 0;
+    transform: rotate(135deg);
+    z-index: 0;
+}
+
+@keyframes shoot {
+    0% {
+        transform: translate(0, 0) rotate(135deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(300px, 700px) rotate(135deg);
+        opacity: 0;
+    }
+}
+
+.shooting-star {
+    width: 4px;
+    height: 120px;
+    box-shadow: 0 0 10px white;
+}
+
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+<!-- 🎵 Lagu -->
+<audio id="bgm" autoplay loop>
+    <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener('click', () => {
+	const audio = document.getElementById('bgm');
+	if (audio.paused) {
+		audio.play();
+	}
+});
+</script>
+
+<!-- Slide 1 -->
+<div class="slide active">
+    <h1>🎉 Happy Birthday Sayang ❤️</h1>
+	<h1>AZZATIE AIRIFAH </h1>
+	<img src="gif1.gif">
+    <h1>It's your spesial day SAYAANGG ✨</h1>
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide">
+	<h1> SAAAYANG </h1>
+<div class="row">
+	<img src="gif2.gif" width="150">
+    <img src="poto17.jpg" width="150">
+	</div>
+<div class="text">
+	<p>Happy bithday sayanggkuuu cintakuu</p>
+	<p>Udah 22 tahun aja ini sayang, selamat bertambah usia seng,semoga menjadi pribadi yg lebih baik lagi</p>
+	<p>Dimudahkan semua urusan urusan seng, dilancarkan juga apa yg seng gapai</p>
+	<p>wish you all the best, semoga apa yg seng inginkan segera tercapai</p>
+	<p>Jangan sedih lagi ya seng, aku ada disaat kamu butuh rumah tuk pulang ❤️</p>
+    </div>
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide">
+	<h1> SENG </h1>
+<div class="row">
+	<img src="gif3.gif" width="150">
+    <img src="poto6.jpg" width="150">
+	</div>
+<div class="text">
+	<p>masa masa kenalan kita emang singkat ya seng, tapi aku harap kita nantinya bisa selamanya</p>
+	<p>sayang kalau butuh cerita tentang dunia e seng, cerita ndek aku ya seng, aku siap kok jadi teman berceritamu</p>
+	<p>aku siap kok seng jadi pendengar keluh kesahmu melawan dunia, jadi jangan sungkan ya sayang❤️ </p>
+	<p>aku kenal dirimu membuatku sadar apa itu hubungan sebenarnya, bukan hanya sekedar status, tapi rasa yg saling melengkapi</p>
+	<p>makasih ya seng sudah hadir didalam hidupku❤️</p>
+	<p>Aku harap kita bisa selalu bersama, melawan dunia</p>
+    </div>
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+
+<div class="slide">
+	<h1> UNTUK SAYANGKU </h1>
+<div class="row">
+	<img src="gif4.gif" width="150">
+    <img src="poto4.jpg" width="150">
+	</div>
+<div class="text">
+	<p>Dihari spesial ini aku kan hadir untukmu sayang, semoga seng bahagia terus ya</p>
+	<p>Kalau capek cerita ya seng, aku mau kok jadi tempat mengeluhmu, aku siap untuk lap peluhmu itu</p>
+	<p>Sayang bentar lagi skripsian ya, semangat ya sayang, aku kan terus dukung apapun itu yang seng lakukan❤️</p>
+	<p>Aku tau sebenarnya sayang dipaksa ambil kelas farmasi, ada aku seng yang siap menyemangatimu biar semangat menjalani hari hari tanpa rasa mengeluh</p>
+	<p>Aku tau seng pasti kecewa sama mama, but aku tetep ada untuk seng, jangan sedih lagi ya seng</p>
+	<p>Ingat abah seng, ingat aku juga hehe</p>
+	<p> huggg sayangggg</p>
+    </div>
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+
+<div class="slide">
+	<h1> SEMANGAT SAYANG</h1>
+<div class="row">
+	<img src="gif20.gif" width="150">
+    <img src="poto20.jpg" width="150">
+	</div>
+<div class="text">
+	<p>Ada yang mau KKN ini,,, semangat sayangg</p>
+	<p>Hati hati ya seng disana jauh dari rumah, tp jangan jauh jauh dari aku ya hehe</p>
+	<p>Kalau ada waktu kabari aku ya seng aku mau dengar ceritamu saat disana,</p>
+	<p>Ingin denger kegiatan e sengg, kalau aku luang kita bisa saling cerita meskipun VC dulu ya sayangg :(</p>
+	<p>Semoga lancar ya seng KKN nya, semangat sayang</p>
+	<p>Ingat ya seng jaga mata jaga hati</p>
+	<p>Love you so much❤️</p>
+    </div>
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+<div class="slide">
+	<h1> SAYANGGG </h1>
+<div class="row">
+	<img src="gif5.gif" width="150">
+    <img src="poto1.jpg" width="150">
+	</div>
+<div class="text">
+	<p>Sayang selalu ingat aku kan?, aku sayang seng, tunggu aku ya sayang :(</p>
+	<p>Sayang jangan cemberut ya, tuhhh cantiknya kurang kalau cemberut gitu :(</p>
+	<p>Ingat masa masa kita melalui badai masalah, kita selesaikan bersama</p>
+	<p>Maapin sikap aku yg mungkin belum bisa berubah ya seng, aku selalu belajar dari semua kesalahan yg telah kita lalui</p>
+	<p>Eh, ini kan hari bahagia seng, ga boleh sedih sedihan :)</p>
+	<p>It's Your Birthday sayang❤️</p>
+	<p>Aku sayang seng❤️</p>
+    </div>
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+
+<div class="slide">
+	<h1> PESANKU UNTUK SENG </h1>
+<div class="row">
+	<img src="gif6.gif" width="150">
+    <img src="poto11.jpg" width="150">
+	</div>
+<div class="text">
+	<p>Sayang jaga kesehatan ya,,, kurangi makan seblaknya, junkfoodnya</p>
+	<p>Jangan sering terlalu begadang ya seng, meskipun nugas harus ingat waktu ya sayang, kasian tubuhnya</p>
+	<p>Jaga kesehatan ya seng kita jauh terbentang jarak kota hehe, tp kalau seng butuh aku, aku usahakan kok :)</p>
+	<p>Jaga hati ya sayang :(</p>
+	<p>Ada aku disini yg sayang sama seng❤️</p>
+	<p>apalagi ya seng,, emmmmm, dahlah intinya </p>
+	<p>Aku sayang seng❤️</p>
+    </div>
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+
+<div class="slide">
+	<h1>OUR TRIP</h1>
+<div class="row">
+	<img src="gif3.gif" width="150">
+    <img src="poto10.jpg" width="150">
+	<img src="poto7.jpg" width="150">
+	<img src="poto14.jpg" width="150">
+	<img src="poto8.jpg" width="150">
+	</div>
+<div class="text">
+	<p>Kemana pun kalau sama seng aku bahagia kok sayangg, makasih ya sayang udah ngajak aku jelajahi dunia ini</p>
+	<p>Wishlist kita masih panjang ya, aku harap bisa sama kamu slamanya❤️</p>
+	<p>Aku seneng pas kita main di jogja, pasuruan</p>
+	<p>Aku bahagia bisa jelajahi buthak, pantai semua pokoknya</p>
+	<p>Kamu ajak ke ponorogo bisa tau saudara saudara seng</p>
+	<p>Intinya mah kalau ada seng gass ajaa</p>
+	<p>pas aku bilang rencana kita terdekat ya ini, aku udah planing kita ngapain aja️</p>
+	<p>Sebernarnya aku ambil libur tgl 9,10, tp mergo melda tgl 9 aku ngalah tgl 10 aja, jadi aku harus replan lagi hmm</p>
+	<p>Gapapa ya seng cuma sebentar , tapi masih ada hari hari esok kok seng :")</p>
+    </div>
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+
+<div class="slide">
+	<h1>BEFORE THIS DAY CAME</h1>
+<div class="row">
+	<img src="gif9.gif" width="150">
+    <img src="poto12.jpg" width="150">
+	</div>
+<div class="text">
+	<p>Maap ya sayang akhir akhir ini aku sering laptopan hehe,</p>
+	<p>Ada yang mau ku tunjukin ke seng soalnya</p>
+	<p>Btw saat text ini kuketik aku sering mimpi lo seng, aku mimpi seng tau kalau emg rencana kita ketemu nanti bakal seperti apa hehe,</p>
+	<p>Jujur aku ga terlalu bisa nyembunyiin apa yg ingin ku lakukan untukmu, pas waktu aku buat parcel pun aku bilang kalau lagi sibuk hehe</p>
+	<p>Terus pas ini aku alasannya buat resume hasil meeting hehe maap ya sayang:)</p>
+	<p>Alasan aku ambil laptop pun untuk seng, aku ngoding, tiap seng nanya ngapain laptopan aku bingung jawabnya apa, </p>
+	<p>Pokoknya semua buat my sayangg❤️</p>
+    </div>
+    <button onclick="nextSlide()">Next ➡️</button>
+</div>
+
+<div class="slide">
+    <h1>Make a Wish 🎂</h1>
+	<img src="gif10.gif" width="300">
+
+    <div class="candle-container" onclick="matiinLilin()">
+        <div class="candle">
+            <div class="flame" id="flame"></div>
+            <div class="body"></div>
+        </div>
+    </div>
+
+    <p class="hint">klik lilinya sayang 💕</p>
+
+    <button onclick="nextSlide()">Next</button>
+</div>
+<!-- Slide 4 -->
+<div class="slide">
+    <h1>I Love You Sayanggg❤️</h1>
+<div class="row">
+	<img src="gif.gif" width="150">
+    <img src="poto.jpg" width="150">
+	</div>
+    <p>Semoga semua impian kamu tercapai ya seng 🎂</p>
+</div>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function nextSlide() {
+    slides[current].classList.remove("active");
+    current++;
+    if (current < slides.length) {
+        slides[current].classList.add("active");
+    }
+}
+
+function matiinLilin() {
+    const flame = document.getElementById("flame");
+
+    // matiin api
+    flame.style.animation = "none";
+    flame.style.transform = "scale(0)";
+    flame.style.opacity = "0";
+
+    setTimeout(() => {
+        flame.style.display = "none";
+    }, 300);
+
+    // 🎉 CONFETTI MUNCUL DI SINI
+    confetti({
+        particleCount: 150,
+        spread: 80,
+        origin: { y: 0.6 }
+    });
+}
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+const starsContainer = document.querySelector(".stars");
+
+for (let i = 0; i < 100; i++) {
+    let star = document.createElement("span");
+
+    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * 100 + "%";
+
+    star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+
+    starsContainer.appendChild(star);
+}
+</script>
+<script>
+function createShootingStar() {
+    const star = document.createElement("div");
+    star.classList.add("shooting-star");
+
+    star.style.top = Math.random() *  -100 + "px";
+    star.style.left = Math.random() * window.innerWidth  + "px";
+
+    star.style.animation = "shoot 1s linear";
+
+    document.body.appendChild(star);
+
+    setTimeout(() => {
+        star.remove();
+    }, 1000);
+}
+
+// munculin tiap beberapa detik
+setInterval(() => {
+    createShootingStar();
+}, 3000);
+
+</script>
+</body>
+</html>
